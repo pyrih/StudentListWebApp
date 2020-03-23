@@ -1,6 +1,6 @@
 # StudentListWebApp
 
-https://prnt.sc/rl3gap
+![](https://prnt.sc/rl3gap)
 
 https://prnt.sc/rl3go7
 
