@@ -1,6 +1,5 @@
 package pyrih.homework.dao;
 
-import oracle.jdbc.driver.OracleDriver;
 import pyrih.homework.entity.Student;
 
 import javax.naming.Context;

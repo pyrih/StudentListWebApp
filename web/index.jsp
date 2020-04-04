@@ -11,13 +11,44 @@
 <html>
 <head>
     <title>Student List Application WebLogic</title>
+    <script>
+        var request = new XMLHttpRequest();
+        function searchInfo() {
+            var name = document.vinform.name.value;
+            var url = "search.jsp?val=" + name;
+
+            try {
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4) {
+                        var val = request.responseText;
+                        document.getElementById('mylocation').innerHTML = val;
+                    }
+                }
+                request.open("GET", url, true);
+                request.send();
+            } catch (e) {
+                alert("Unable to connect to server");
+            }
+        }
+    </script>
 </head>
 <body>
+
 <div style="text-align: center;">
     <h1>Student List</h1>
     <h2>
-        <a href="${pageContext.request.contextPath}/new">Add New Student</a> &nbsp; | &nbsp; <a href="${pageContext.request.contextPath}/list">All Students List</a>
+        <a href="${pageContext.request.contextPath}/new">Add New Student</a> &nbsp; | &nbsp;
+        <a href="${pageContext.request.contextPath}/list">All Students List</a>
     </h2>
+</div>
+<div style="text-align: center;">
+    <h1>Search Student</h1>
+
+    <form name="vinform">
+        <input type="text" name="name" onkeyup="searchInfo()">
+    </form>
+
+    <span id="mylocation"></span>
 </div>
 <div align="center">
     <table border="1" cellpadding="5">

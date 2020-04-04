@@ -5,12 +5,12 @@
          version="4.0">
 
     <display-name>Student List Web Application</display-name>
-    
+
     <servlet>
         <servlet-name>StudentServlet</servlet-name>
         <servlet-class>pyrih.homework.servlet.StudentServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>StudentServlet</servlet-name>
         <url-pattern>/</url-pattern>
@@ -20,10 +20,15 @@
         <exception-type>java.lang.Exception</exception-type>
         <location>/error.jsp</location>
     </error-page>
-    
-<!--    <welcome-file-list>
-        <welcome-file></welcome-file>
-    </welcome-file-list>-->
 
-    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
 </web-app>
